@@ -20,6 +20,6 @@ Task overview:
 
 **To run the cron job **
 
-_php artisan schedule:run_
+_* * * * * cd /path-to-your-project && php artisan schedule:run >> /dev/null 2>&1_
 
 
