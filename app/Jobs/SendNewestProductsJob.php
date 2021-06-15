@@ -10,6 +10,7 @@ use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Bus\Dispatchable;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Queue\SerializesModels;
+use Illuminate\Support\Facades\Mail;
 
 class SendNewestProductsJob implements ShouldQueue
 {
@@ -41,7 +42,7 @@ class SendNewestProductsJob implements ShouldQueue
         ];
 
         foreach (User::all() as $user){
-            \Mail::send('emails.newestProducts', $products,
+            Mail::send('emails.newestProducts', $products,
 
                 function($message) use ($user) {
 

@@ -31,6 +31,7 @@ class Kernel extends ConsoleKernel
 
         $schedule->job(new SendNewestProductsJob)->weekly()->at('09:00');
 
+        // for test
         //$schedule->job(new SendNewestProductsJob)->everyMinute();
 
 
